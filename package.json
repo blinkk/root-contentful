@@ -1,0 +1,44 @@
+{
+  "name": "root-contentful",
+  "version": "1.0.0",
+  "description": "Contentful utils for Root.js projects",
+  "author": "s@blinkk.com",
+  "license": "MIT",
+  "keywords": [
+    "root"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkk/root-contentful.git"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "bin": {
+    "root-cms": "./bin/root-cms.js"
+  },
+  "type": "module",
+  "module": "./dist/core.js",
+  "types": "./dist/core.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsup-node --config=./tsup.config.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "kleur": "^4.1.5"
+  }
+}
